@@ -11,8 +11,9 @@ I have cross compiled this to work with Mac. Unfortunately, I don't have a Mac t
 I output logs for debugging purposes. If I ask you to output logs
 
 #### MacOS
-Navigate to ~/Library/Application Support/com.elgato.StreamDeck/Plugins/com.phxdev.mmhmm.sdPlugin
+Navigate to ~/Library/Application Support/com.elgato.StreamDeck/Plugins/com.phxdev.mmhmm.sdPlugin<br/>
 Send me Log.txt
+
 #### Windows
-Navigate to %appdata%\Elgato\StreamDeck\Plugins\com.phxdev.mmhmm.sdPlugin
+Navigate to %appdata%\Elgato\StreamDeck\Plugins\com.phxdev.mmhmm.sdPlugin<br/>
 Send me Log.txt
