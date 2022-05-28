@@ -1,0 +1,131 @@
+﻿{
+  "Actions": [
+    {
+      "Icon": "Icons/next",
+      "Name": "Next Slide",
+      "States": [
+        {
+          "Image": "Icons/next",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Moves to the next slide.",
+      "UUID": "PhxDev.mmhmmStreamDeckPlugin.NextSlide"
+    },
+    {
+      "Icon": "Icons/previous",
+      "Name": "Previous Slide",
+      "States": [
+        {
+          "Image": "Icons/previous",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Moves to the previous slide.",
+      "UUID": "PhxDev.mmhmmStreamDeckPlugin.PreviousSlide"
+    },
+    {
+      "Icon": "Icons/reset",
+      "Name": "Reset Camera",
+      "States": [
+        {
+          "Image": "Icons/reset",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Reset your camera to default settings",
+      "UUID": "phxdev.mmhmmstreamdeckplugin.resetcamera"
+    },
+    {
+      "Icon": "Icons/camera",
+      "Name": "Toggle Camera",
+      "States": [
+        {
+          "Image": "Icons/camera",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Toggle camera on and off",
+      "UUID": "phxdev.mmhmmstreamdeckplugin.togglecamera"
+    },
+    {
+      "Icon": "Icons/presenter",
+      "Name": "Increase Presenter Size",
+      "States": [
+        {
+          "Image": "Icons/presenter",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Increase presenter size by 20%",
+      "UUID": "phxdev.mmhmmstreamdeckplugin.increasepresentersize"
+    },
+    {
+      "Icon": "Icons/presenter",
+      "Name": "Decrease Presenter Size",
+      "States": [
+        {
+          "Image": "Icons/presenter",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Decrease presenter size by 20%",
+      "UUID": "phxdev.mmhmmstreamdeckplugin.decreasepresentersize"
+    },
+    {
+      "Icon": "Icons/away",
+      "Name": "Toggle Away",
+      "States": [
+        {
+          "Image": "Icons/away",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Tooltip": "Toggle away screen on and off",
+      "UUID": "phxdev.mmhmmstreamdeckplugin.toggleaway"
+    }
+  ],
+  "Author": "Mark Scott - PhxDev",
+  "Description": "A handy plugin for controlling the mmhmm app!",
+  "Name": "mmhmm",
+  "Icon": "Icons/mmhmm_logo",
+  "URL": "https://phxdev.me",
+  "Version": "0.1",
+  "CodePath": "Windows64/PhxDev.mmhmmStreamDeckPlugin.PluginApp.exe",
+  "CodePathMac": "Mac/PhxDev.mmhmmStreamDeckPlugin.PluginApp",
+  "Category": "mmhmm",
+  "CategoryIcon": "Icons/mmhmm_logo",
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.1"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "10.11"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "ApplicationsToMonitor": {
+    "windows": [
+      "mmhmm.exe"
+    ]
+  }
+}

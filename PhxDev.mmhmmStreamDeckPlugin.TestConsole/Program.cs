@@ -9,7 +9,7 @@ namespace PhxDev.mmhmmStreamDeckPlugin.TestConsole
             Console.WriteLine("Hello World!");
             mmhmmUI UI = new mmhmmUI();
             //UI.ToggleAway();
-            UI.ToggleCamera();
+            UI.NextSlide();
         }
     }
 }

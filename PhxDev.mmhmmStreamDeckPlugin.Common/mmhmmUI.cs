@@ -24,50 +24,66 @@ namespace PhxDev.mmhmmStreamDeckPlugin.Common
         //Process[] processes = Process.GetProcesses();
         public void NextSlide()
         {
-            BringProcessToFront(GetMmhmmProcess());
-            sim.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
+            if (BringProcessToFront(GetMmhmmProcess())){
+                sim.Keyboard.KeyPress(VirtualKeyCode.RIGHT);
+            }
         }
 
         public void PreviousSlide()
         {
-            BringProcessToFront(GetMmhmmProcess());
-            sim.Keyboard.KeyPress(VirtualKeyCode.LEFT);
+            if (BringProcessToFront(GetMmhmmProcess()))
+            {
+                sim.Keyboard.KeyPress(VirtualKeyCode.LEFT);
+            }
         }
 
         public void ResetCamera()
         {
-            BringProcessToFront(GetMmhmmProcess());
-            sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_R);
+            if (BringProcessToFront(GetMmhmmProcess())){
+                sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_R);
+            }
         }
 
         public void ToggleCamera()
         {
-            BringProcessToFront(GetMmhmmProcess());
-            sim.Keyboard.KeyPress(VirtualKeyCode.OEM_2);
+            if (BringProcessToFront(GetMmhmmProcess()))
+            {
+                sim.Keyboard.KeyPress(VirtualKeyCode.OEM_2);
+            }
         }
 
         public void IncreasePresenterSize()
         {
-            BringProcessToFront(GetMmhmmProcess());
-            sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.UP);
+            if (BringProcessToFront(GetMmhmmProcess())){
+                sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.UP);
+            }
         }
 
         public void DecreasePresenterSize()
         {
-            BringProcessToFront(GetMmhmmProcess());
-            sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.DOWN);
+            if (BringProcessToFront(GetMmhmmProcess()))
+            {
+                sim.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.DOWN);
+            }
+            
         }
 
         public void ToggleAway()
         {
-            
-            BringProcessToFront(GetMmhmmProcess());
-            sim.Keyboard.ModifiedKeyStroke(new[] { VirtualKeyCode.CONTROL, VirtualKeyCode.SHIFT }, VirtualKeyCode.VK_A);
+
+            if (BringProcessToFront(GetMmhmmProcess()))
+            {
+                sim.Keyboard.ModifiedKeyStroke(new[] { VirtualKeyCode.CONTROL, VirtualKeyCode.SHIFT }, VirtualKeyCode.VK_A);
+            }
         }
 
 
-        private void BringProcessToFront(Process process)
+        private bool BringProcessToFront(Process process)
         {
+            if(process == null)
+            {
+                return false;
+            }
             IntPtr handle = process.MainWindowHandle;
             if (IsIconic(handle))
             {
@@ -75,11 +91,20 @@ namespace PhxDev.mmhmmStreamDeckPlugin.Common
             }
 
             SetForegroundWindow(handle);
+            return true;
         }
 
         private Process GetMmhmmProcess()
         {
-            return Process.GetProcessesByName("mmhmm")[0];
+            var processes = Process.GetProcessesByName("mmhmm");
+            if(processes.Length == 0 || processes.Length > 1)
+            {
+                return null;
+            }
+            else
+            {
+                return processes[0];
+            }
         }
     }
 }
